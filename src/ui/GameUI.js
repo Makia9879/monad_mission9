@@ -7,6 +7,7 @@ export class GameUI {
     this.totalElement = document.getElementById('total');
     this.victoryScreen = document.getElementById('victory-screen');
     this.restartButton = document.getElementById('restart-button');
+    this.restartGameBtn = document.getElementById('restart-game-btn');
 
     this.onRestartCallback = null;
 
@@ -17,9 +18,16 @@ export class GameUI {
    * 初始化UI
    */
   init() {
-    // 绑定重新开始按钮
+    // 绑定胜利界面的重新开始按钮
     this.restartButton.addEventListener('click', () => {
       this.hideVictory();
+      if (this.onRestartCallback) {
+        this.onRestartCallback();
+      }
+    });
+
+    // 绑定游戏中的重新开始按钮
+    this.restartGameBtn.addEventListener('click', () => {
       if (this.onRestartCallback) {
         this.onRestartCallback();
       }

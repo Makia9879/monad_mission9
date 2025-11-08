@@ -45,6 +45,29 @@
       font-size: 18px;
       display: inline-block;
       pointer-events: auto;
+      margin-right: 15px;
+    }
+
+    #restart-game-btn {
+      background: rgba(76, 175, 80, 0.9);
+      color: white;
+      border: none;
+      padding: 15px 25px;
+      border-radius: 10px;
+      font-size: 16px;
+      cursor: pointer;
+      pointer-events: auto;
+      transition: background 0.3s;
+      display: inline-block;
+      vertical-align: top;
+    }
+
+    #restart-game-btn:hover {
+      background: rgba(69, 160, 73, 1);
+    }
+
+    #restart-game-btn:active {
+      transform: scale(0.95);
     }
 
     #victory-screen {
@@ -95,31 +118,67 @@
       border-radius: 10px;
       font-size: 14px;
       pointer-events: auto;
+      color: #ffffff;
     }
 
     #controls-info p {
       margin: 5px 0;
+      color: #ffffff;
+    }
+
+    #controls-info strong {
+      color: #ffd700;
     }
 
     @media (max-width: 768px) {
       #controls-info {
-        font-size: 12px;
-        padding: 10px 15px;
+        font-size: 13px;
+        padding: 12px 18px;
         bottom: 10px;
         left: 10px;
+        right: 10px;
+        max-width: calc(100% - 20px);
       }
 
       #treasure-counter {
         font-size: 16px;
-        padding: 12px 20px;
+        padding: 12px 18px;
+        margin-right: 10px;
+      }
+
+      #restart-game-btn {
+        font-size: 14px;
+        padding: 12px 18px;
+      }
+
+      #victory-screen {
+        padding: 25px 30px;
+        max-width: 90%;
+        transform: translate(-50%, -50%);
       }
 
       #victory-screen h1 {
-        font-size: 36px;
+        font-size: 38px;
+        margin-bottom: 15px;
       }
 
       #victory-screen p {
         font-size: 18px;
+        margin-bottom: 20px;
+      }
+
+      #restart-button {
+        padding: 12px 30px;
+        font-size: 16px;
+      }
+
+      #ui-overlay {
+        padding: 15px 10px;
+      }
+
+      #treasure-counter,
+      #restart-game-btn {
+        margin-bottom: 0;
       }
     }
   </style>
@@ -130,6 +189,7 @@
       <div id="treasure-counter">
         宝物: <span id="collected">0</span> / <span id="total">0</span>
       </div>
+      <button id="restart-game-btn">重新开始</button>
     </div>
 
     <div id="victory-screen">
@@ -139,9 +199,8 @@
     </div>
 
     <div id="controls-info">
-      <p><strong>控制方式：</strong></p>
-      <p>WASD 或 触摸拖拽控制移动</p>
-      <p>按住拖拽方向持续移动</p>
+      <p><strong>控制：</strong>WASD 或 触摸拖拽</p>
+      <p>按住方向持续移动</p>
     </div>
   </div>
 

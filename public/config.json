@@ -1,0 +1,39 @@
+{
+  "maze": {
+    "width": 20,
+    "height": 20
+  },
+  "treasures": {
+    "count": 5,
+    "types": [
+      {
+        "name": "ruby",
+        "color": "#FF0000"
+      },
+      {
+        "name": "emerald",
+        "color": "#00FF00"
+      },
+      {
+        "name": "sapphire",
+        "color": "#0000FF"
+      },
+      {
+        "name": "diamond",
+        "color": "#FFFFFF"
+      },
+      {
+        "name": "amethyst",
+        "color": "#9933FF"
+      }
+    ]
+  },
+  "player": {
+    "speed": 20,
+    "viewRadius": 2
+  },
+  "graphics": {
+    "wallHeight": 0.5,
+    "cellSize": 1
+  }
+}

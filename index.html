@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <title>迷宫寻宝游戏</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      width: 100vw;
+      height: 100vh;
+      overflow: hidden;
+      font-family: 'Arial', sans-serif;
+      background: #000;
+    }
+
+    #game-container {
+      width: 100%;
+      height: 100%;
+      position: relative;
+    }
+
+    #ui-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      padding: 20px;
+      color: white;
+      z-index: 100;
+      pointer-events: none;
+    }
+
+    #treasure-counter {
+      background: rgba(0, 0, 0, 0.7);
+      padding: 15px 25px;
+      border-radius: 10px;
+      font-size: 18px;
+      display: inline-block;
+      pointer-events: auto;
+    }
+
+    #victory-screen {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background: rgba(0, 0, 0, 0.9);
+      padding: 40px 60px;
+      border-radius: 15px;
+      text-align: center;
+      display: none;
+      pointer-events: auto;
+    }
+
+    #victory-screen h1 {
+      font-size: 48px;
+      margin-bottom: 20px;
+      color: #ffd700;
+    }
+
+    #victory-screen p {
+      font-size: 24px;
+      margin-bottom: 30px;
+    }
+
+    #restart-button {
+      padding: 15px 40px;
+      font-size: 20px;
+      background: #4CAF50;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    #restart-button:hover {
+      background: #45a049;
+    }
+
+    #controls-info {
+      position: absolute;
+      bottom: 20px;
+      left: 20px;
+      background: rgba(0, 0, 0, 0.7);
+      padding: 15px 20px;
+      border-radius: 10px;
+      font-size: 14px;
+      pointer-events: auto;
+    }
+
+    #controls-info p {
+      margin: 5px 0;
+    }
+
+    @media (max-width: 768px) {
+      #controls-info {
+        font-size: 12px;
+        padding: 10px 15px;
+        bottom: 10px;
+        left: 10px;
+      }
+
+      #treasure-counter {
+        font-size: 16px;
+        padding: 12px 20px;
+      }
+
+      #victory-screen h1 {
+        font-size: 36px;
+      }
+
+      #victory-screen p {
+        font-size: 18px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div id="game-container">
+    <div id="ui-overlay">
+      <div id="treasure-counter">
+        宝物: <span id="collected">0</span> / <span id="total">0</span>
+      </div>
+    </div>
+
+    <div id="victory-screen">
+      <h1>胜利！</h1>
+      <p>你找到了所有宝物！</p>
+      <button id="restart-button">重新开始</button>
+    </div>
+
+    <div id="controls-info">
+      <p><strong>控制方式：</strong></p>
+      <p>WASD 或 触摸拖拽控制移动</p>
+      <p>按住拖拽方向持续移动</p>
+    </div>
+  </div>
+
+  <script type="module" src="/src/main.js"></script>
+</body>
+</html>
